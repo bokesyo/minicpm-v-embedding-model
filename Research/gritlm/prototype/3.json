@@ -1,0 +1,18 @@
+{
+    "query": [
+        "Information: In this task, you're given an article, a question which often contains a blank and four options (associated with \"A\", \"B\", \"C\", \"D\"). Your task is to find the correct answer (from the given options) for the question from the given article and return one of the options from \"A\", \"B\", \"C\", and \"D\". Do not generate anything else apart from one of the following characters: \"A\", \"B\", \"C\", \"D\". There is only one correct answer for each question.\nRepresent the text to be matched with a correct answer for it given the information.",
+        "Article: In 1955, a man named Raymond Kroc entered a partnership with two brothers named Mcdonald. They operated a popular restaurant in California which sold food that was easy to prepare and serve quickly. Hamburgers, French fries, and cold drinks were the main foods on the limited menu. Kroc opened similar eating places under the same name, \"McDonald's\" and they were a quick success. He later took over the company and today it is one of the most famous and successful \"fast-food\" chains  in America and the world. Why was his idea so successful? Probably the most important reason was that his timing was right. In the 1950s, most married women stayed home to keep house and take care of their children. During the 1960s, the movement for equality  between men and women and an economy  that needed more families to have two money-earners resulted in many women returning to the workplace. This meant that they had less time and energy to do housework, so they depended more on fast-food restaurants. Single parents also have little time to spend in the kitchen. People living alone because of divorce  or a preference for a \"single lifestyle\" also depend on this type of food, since cooking for one is often more trouble than it is worth. Fast food is not part of the diet of all Americans. Another of the 1960s was called back-to-nature movement. More and more Americans based their diets on natural foods. This preference for natural foods continues to this day. These products can now be found not only in the special health food store but also in many supermarkets. \n Question: The passage is mainly about   _  . \n Options: (A) how and why \"McDonald's\" became successful (B) the effect social and economic changes have on people's eating habits (C) why Americans prefer natural food (D) American eating habits"
+    ],
+    "pos": [
+        [
+            "",
+            "B"
+        ]
+    ],
+    "neg": [
+        [
+            "In this task, you're given an article, a question which often contains a blank and four options (associated with \"A\", \"B\", \"C\", \"D\"). Your task is to find the correct answer (from the given options) for the question from the given article and return one of the options from \"A\", \"B\", \"C\", and \"D\". Do not generate anything else apart from one of the following characters: \"A\", \"B\", \"C\", \"D\". There is only one correct answer for each question.\n\nGiven the above task description, represent the following answer that will be used to retrieve a fitting input",
+            "D"
+        ]
+    ]
+}

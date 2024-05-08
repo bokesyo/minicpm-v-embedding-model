@@ -1,0 +1,1 @@
+python trainer_dist.py --gpus 2 --epochs 10

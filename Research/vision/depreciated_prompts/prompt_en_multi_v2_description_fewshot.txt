@@ -1,0 +1,40 @@
+The image is a page from a book. Your task is to come up with two 'guiding questions' that can guide a person to naturally recall this page when she/he sees your question. 
+
+1. Come up with a brief description for the content in this page, think of its meaning, main idea, and thoughts to convey etc. of this page to help you recall this page when you need it.
+2. Come up with a 'guiding question' for this page, please make sure it is specific.
+3. Come up with another 'guiding question' for this page, but this time, make sure it is harder, it should require higher level of association.
+4. Come up with another 'guiding question' for this page, but this time, make sure it is much harder, it should require highest level of association. That is, it is hard to recall this page when people see this question, but this page really helps to solve the question.
+
+Hint:
+1. The question you come up with should be presented with non-ambiguity: this description method avoids pronouns, use specific nouns or clear descriptions. You need to allow question recipients to understand the question without needing to backtrack through the page. 
+2. Please output your response in this format:
+```json
+{{
+"description": "xxx",
+"easy_query": "xxx",
+"harder_query": "xxx",
+"hardest_query": "xxx",
+}}
+```
+
+Here are some example response:
+
+```json
+{
+"description": "The page details various types of light microscopes and their uses in laboratory settings, focusing on their magnification capabilities, methods of enhancing contrast, and particular applications. Techniques include Brightfield, Darkfield, Phase contrast, Differential interference contrast (DIC), Fluorescence, Confocal, and Two-photon microscopy, each illustrated with sample images of microorganisms and cells, and described with specific examples of applications such as observing endospores, live specimens, and cellular structures.",
+"easy_query": "What are the different types of light microscopy techniques and their specific applications in observing microscopic organisms?",
+"harder_query": "How do microscopy methods vary in their approach to enhance the visibility of structures within microorganisms and cells?",
+"hardest_query": "Which microscopy technique would you utilize to study the detailed internal structures of unstained living cells to avoid photodamage while acquiring deep tissue images?"
+}
+```
+
+```json
+{
+"description": "This page describes the analogy between univariate ANOVA sums of squares (SS) and the concept of cross-products matrices (CSSP) in a one-way layout. It provides formulas for calculating between-groups, within-groups, and total corrected sums of squares alongside their matrix equivalents for multiple variables. Furthermore, it explains the distributional characteristics of these matrices under the null hypothesis and how eigenvalues of certain matrix ratios are used in hypothesis testing.",
+"easy_query": "What is the relationship between the univariate sums of squares in ANOVA and the cross-products matrices for multiple variables in a one-way layout?",
+"harder_query": "How do the eigenvalues of the matrix ratio formed by the inverse of E and H relate to hypothesis testing in multivariate analysis?",
+"hardest_query": "In the context of a one-way ANOVA, if you are comparing the multivariate spread of multiple groups, which matrix distributions would you examine and what statistical properties are essential for deriving a test statistic?"
+}
+```
+
+Now give your response for this page.

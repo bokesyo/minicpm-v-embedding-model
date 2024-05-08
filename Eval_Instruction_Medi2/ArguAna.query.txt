@@ -1,0 +1,1 @@
+Given a claim, find documents that refute the claim <text>

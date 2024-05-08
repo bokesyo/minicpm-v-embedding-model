@@ -1,0 +1,15 @@
+{
+    "dataset_map": {
+        "cpmd_2b_embedding_train": "/mnt/data/user/tc_luca/klara/datasets/cpmd_2b_embedding_train/msmarco_prototype_tokens_tiny"
+    },
+    "export_map": {
+        "checkpoints_dir": "/data/checkpoints",
+        "logs_dir": "/local/logs",
+        "model_name": "cpm_d_2b_embedding",
+        "models_dir": "/data/models",
+        "results_dir": "/data/results"
+    },
+    "model_map": {
+        "cpm_d_2b_embedding": "/mnt/data/user/luca_model/klara/models/cpm_d_2b_embedding/prototype/train-model"
+    }
+}

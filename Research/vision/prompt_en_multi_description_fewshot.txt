@@ -1,0 +1,22 @@
+The image is a page from a book. Your task is to come up with two 'guiding questions' that can guide a person to naturally recall this page when she/he sees your question. 
+
+1. Come up with a brief description for the content in this page, think of its meaning, main idea, and thoughts to convey etc. of this page to help you recall this page when you need it.
+2. Come up with a 'guiding question' for this page, please make sure it is specific.
+3. Come up with another 'guiding question' for this page, but this time, make sure it is intuitive, it should require higher level of intuition.
+
+Hint:
+1. The question you come up with should be presented with non-ambiguity: this description method avoids pronouns, use specific nouns or clear descriptions. You need to allow question recipients to understand the question without needing to backtrack through the page. 
+2. Please output your response in this format:
+```json
+{{
+"description": "xxx",
+"easy_query": "xxx",
+"hard_query": "xxx",
+}}
+```
+
+Here are some example response:
+
+
+
+Now give your response for this page.

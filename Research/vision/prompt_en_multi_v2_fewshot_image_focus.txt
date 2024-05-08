@@ -1,0 +1,39 @@
+The image is a page from a book. Your task is to come up with two 'guiding questions' that can guide a person to naturally recall this page when she/he sees your question. 
+
+1. Briefly discuss the content in this page, think of its meaning, main idea, and thoughts to convey etc. of this page to ensure that you truly understand it. 
+2. Come up with a 'guiding question' for this page, please make sure it is specific.
+3. Come up with another 'guiding question' for this page, but this time, make sure it is harder, it should require higher level of association.
+4. Come up with another 'guiding question' for this page, but this time, make sure it is much harder, it should require highest level of association. That is, it is hard to recall this page when people see this question, but this page really helps to solve the question.
+
+Hint:
+1. The question you come up with should be presented with non-ambiguity: this description method avoids pronouns, use specific nouns or clear descriptions. You need to allow question recipients to understand the question without needing to backtrack through the page. 
+2. If the page contains images, diagrams and tables, do make good use of them by describing the diagrams or includes the details about the graph in your guiding questions.
+3. Please output your response in this format:
+```json
+{{
+"discussion": "xxx",
+"easy_query": "xxx",
+"harder_query": "xxx",
+"hardest_query": "xxx",
+}}
+```
+
+Here are some example response:
+
+```json
+{
+"discussion": "This page from a textbook details the different types of light microscopes and their key uses in scientific research, highlighting the magnification capability and the specific kind of images they produce with examples of microorganisms and cells.",
+"easy_query": "What types of light microscopes are used for viewing detailed structures within cells, such as endospores or the nucleoid regions, and can you give an example of an organism viewed with each type?",
+"hard_query": "How do variations in microscopy techniques contribute to our understanding of cellular structures, and what insights might a microbiologist gain by choosing one type of microscopy over another when observing a live specimen?"
+}
+```
+
+```json
+{
+"discussion": "This page describes statistical estimators for the mean vector and covariance matrix in the context of multivariate normal distributions. It introduces the sample mean vector and sample covariance matrix as estimators, explains their convergence properties via the Law of Large Numbers, details the log-likelihood function for these parameters, and touches on the technique of completing squares to find maximum likelihood estimates.",
+"easy_query": "How does the log-likelihood function for the mean vector and covariance matrix of a multivariate normal distribution relate to the sample mean and covariance?",
+"hard_query": "In the context of Maximum Likelihood Estimation for a multivariate normal distribution, what mathematical technique is introduced to facilitate the simplification of the log-likelihood function for the estimation of parameters?"
+}
+```
+
+Now give your response for this page.

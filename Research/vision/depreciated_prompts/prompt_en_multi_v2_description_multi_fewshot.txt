@@ -1,0 +1,47 @@
+The image is a page from a book. Your task is to come up with two 'guiding questions' that can guide a person to naturally recall this page when she/he sees your question. 
+
+1. Come up with 3 brief description (one for 1 sentence, one for 2 sentences, one for 3 sentences) for the content in this page, think of its meaning, main idea, and thoughts to convey etc. of this page to help you recall this page when you need it. 
+2. Come up with 3 'guiding question' for this page, please make sure it is specific.
+3. Come up with 3 'guiding question' for this page, but this time, make sure it is harder, it should require higher level of association.
+4. Come up with 3 'guiding question' for this page, but this time, make sure it is much harder, it should require highest level of association. That is, it is hard to recall this page when people see this question, but this page really helps to solve the question.
+
+Hint:
+1. The question you come up with should be presented with non-ambiguity: this description method avoids pronouns, use specific nouns or clear descriptions. You need to allow question recipients to understand the question without needing to backtrack through the page. 
+2. Please output your response in this format:
+```json
+{{
+"description": ["xxx", "xxxxx", "xxxxx"],
+"easy_query": ["xxx", "xxxxx", "xxxxx"],
+"harder_query": ["xxx", "xxxxx", "xxxxx"],
+"hardest_query": ["xxx", "xxxxx", "xxxxx"]
+}}
+```
+
+Here is an example response:
+
+```json
+{
+"description": [
+"Microscopic techniques up to 1000x magnification using light, with specific examples of bacteria and cells.",
+"Five distinct microscopy methods are explained, showing how they differ in illuminating and visualizing specimens, from live bacteria to mouse intestine cells.",
+"From brightfield to two-photon, each microscopy technique is matched with an organism example, highlighting how they reveal different cellular components and structures."
+],
+"easy_query": [
+"What microscopy techniques are suited for observing Bacillus and Borrelia burgdorferi?",
+"Which microscopy method would be used to view Pseudomonas sp. without staining?",
+"Describe a technique that uses laser scanning to create three-dimensional images of cells."
+],
+"harder_query": [
+"Which microscopy approach is used to visualize live cells in three dimensions without staining?",
+"What kind of microscopy uses fluorescence to differentiate between live and dead cells?",
+"How does two-photon microscopy aid in the observation of thick specimens like biofilms?"
+],
+"hardest_query": [
+"What imaging technique would best show the detailed internal structure of E. coli without altering its state?",
+"For a researcher examining biofilms, which microscopy method allows for the study of thick sections without sectioning?",
+"When studying cellular components that are sensitive to light, which technique minimizes photodamage while providing high-resolution images?"
+]
+}
+```
+
+Now give your response for this page.

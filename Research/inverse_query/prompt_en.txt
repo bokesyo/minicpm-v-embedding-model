@@ -1,0 +1,12 @@
+The following is a paragraph of text. Your task is to come up with a natural, precise, and ingenious question that can directly "guide" someone to think of this content when she/he sees your question. Do you understand what I mean? The text I provide will answer the question you have come up with. This is actually a reverse process. Here is the text I provided:
+
+{passage}
+
+Please output your thought process in JSON format:
+
+```json
+{{
+    "discussion": "[Discuss the meaning, main idea, etc. of this text to ensure that you truly understand it.]",
+    "query": "Think of a 'guiding question' for this text, please make sure it is specific, accurate, and just right. Don't be too short, and also don't be too long."
+}}
+```

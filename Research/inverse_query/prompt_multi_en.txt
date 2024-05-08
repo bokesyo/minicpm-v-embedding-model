@@ -1,0 +1,14 @@
+The following is a paragraph of text. Your task is to come up with a natural, precise, and ingenious question that can directly "guide" someone to think of this content when she/he sees your question. Do you understand what I mean? The text I provide will answer the question you have come up with. This is actually a reverse process. Here is the text I provided:
+
+{passage}
+
+Please output your thought process in JSON format:
+
+```json
+{{
+    "discussion": "[Discuss the meaning, main idea, etc. of this text to ensure that you truly understand it.]",
+    "easy_query": "Think of a 'guiding question' for this passage, please make sure it is specific, accurate. This query usually refers to specific and detailed, typically this query should directly hit some information in this passage.",
+    "hard_query": "Think of another 'guiding question' for this passage, but this time, you need to give me an advanced query: you know, this time your query should not focus on lexical similarity or a specific entity, instead you need to consider in semantic space, conceptually, and deeper, requiring some thoughts and reasoning to solve.",
+    "intermediate_query": "Think of another 'guiding question' for this page, but this time, you need to give a query which difficulty is between easy_query and hard_query.",
+}}
+```

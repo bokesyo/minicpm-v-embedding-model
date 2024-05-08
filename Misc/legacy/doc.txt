@@ -1,0 +1,59 @@
+wget --no-check-certificate https://rocketqa.bj.bcebos.com/corpus/marco.tar.gz
+
+tar -zxf marco.tar.gz
+rm -rf marco.tar.gz
+cd marco
+# In the same folder, download and extract the official MS MARCO files:
+wget https://msmarco.blob.core.windows.net/msmarcoranking/qidpidtriples.train.full.2.tsv.gz
+wget https://msmarco.blob.core.windows.net/msmarcoranking/qrels.train.tsv -O qrels.train.tsv
+
+gunzip qidpidtriples.train.full.2.tsv.gz
+
+tar zxvf qrels.train.tsv.tar.gz
+# replaced the qrels.train.tsv
+
+
+jeeves@notebook-3934-openmatch:~/marco$ ls -lh
+total 12G
+-rw-r--r-- 1 jeeves jeeves 284K Jul 27  2021 dev.query.txt
+-rw-rw-r-- 1 jeeves jeeves 281M Jul 27  2021 para.title.txt
+-rwxr-xr-x 1 jeeves jeeves 2.9G Jul 27  2021 para.txt
+-rw-rw-r-- 1 jeeves jeeves 8.9G Jan 22 10:49 qidpidtriples.train.full.2.tsv
+-rw-r--r-- 1 jeeves jeeves 111K Jul 27  2021 qrels.dev.tsv
+-rw-r--r-- 1 jeeves jeeves 5.2M Jul 27  2021 qrels.train.addition.tsv
+-rw-r--r-- 1 jeeves jeeves 7.6M Jul 27  2021 qrels.train.tsv
+-rw-rw-r-- 1 jeeves jeeves 3.4M Jan 22 10:49 qrels.train.tsv.tar.gz
+-rw-r--r-- 1 jeeves jeeves  20M Jul 27  2021 train.query.txt
+
+
+jeeves@notebook-3934-openmatch:~/marco$ ls -lh
+total 12G
+-rw-r--r-- 1 jeeves jeeves 284K Jul 27  2021 dev.query.txt
+-rw-rw-r-- 1 jeeves jeeves 281M Jul 27  2021 para.title.txt
+-rwxr-xr-x 1 jeeves jeeves 2.9G Jul 27  2021 para.txt
+-rw-rw-r-- 1 jeeves jeeves 8.9G Jan 22 10:49 qidpidtriples.train.full.2.tsv
+-rw-r--r-- 1 jeeves jeeves 111K Jul 27  2021 qrels.dev.tsv
+-rw-r--r-- 1 jeeves jeeves 5.2M Jul 27  2021 qrels.train.addition.tsv
+-rw-rw-r-- 1 jeeves jeeves  11M Nov 29  2018 qrels.train.tsv
+-rw-rw-r-- 1 jeeves jeeves 3.4M Jan 22 10:49 qrels.train.tsv.tar.gz
+-rw-r--r-- 1 jeeves jeeves  20M Jul 27  2021 train.query.txt
+
+
+join  -t "$(echo -en '\t')"  -e '' -a 1  -o 1.1 2.2 1.2  <(sort -k1,1 para.txt) <(sort -k1,1 para.title.txt) | sort -k1,1 -n > corpus.tsv
+
+awk -v RS='\r\n' '$1==last {printf ",%s",$3; next} NR>1 {print "";} {last=$1; printf "%s\t%s",$1,$3;} END{print "";}' qidpidtriples.train.full.2.tsv > train.negatives.tsv
+
+PLM_DIR=/home/jeeves
+COLLECTION_DIR=/home/jeeves
+PROCESSED_DIR=/home/jeeves
+
+python scripts/msmarco/build_train.py \
+    --tokenizer_name $PLM_DIR/bert-base-uncased  \  # path to the HF tokenizer
+    --negative_file $COLLECTION_DIR/marco/train.negatives.tsv  \  # the above negatives file
+    --qrels $COLLECTION_DIR/marco/qrels.train.tsv  \
+    --queries $COLLECTION_DIR/marco/train.query.txt  \
+    --collection $COLLECTION_DIR/marco/corpus.tsv  \
+    --save_to $PROCESSED_DIR/msmarco-bert-base/  \  # directory for output
+    --doc_template "<title><SEP><text>"  # passage-side template. <title> <text> will be replaced
+
+cat $PROCESSED_DIR/msmarco-bert-base/*.jsonl > $PROCESSED_DIR/msmarco-bert-base/train.jsonl

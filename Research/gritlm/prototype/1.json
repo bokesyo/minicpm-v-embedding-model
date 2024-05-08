@@ -1,0 +1,18 @@
+{
+    "query": [
+        "Information: You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive, depending on the content of the review.\nRepresent the text to be matched with a correct answer for it given the information.",
+        "Got these for my chocolate lab and it gave her diarrhea.  I also have a black lab mix and she can chew on them just fine.  To be fair though, this chocolate lab has a very sensitive stomach.  I have to take her own food when I board her at the kennel and I don't have to do that for my other dogs so if your dog doesn't have that sensitive a system, I think these will work just fine.  My black lab loves them.  (I just have to keep them away from my chocolate lab.)"
+    ],
+    "pos": [
+        [
+            "For the following task, we need to match inputs with outputs via retrieval. After the task description, you will be given an example output for represenation.\n\nTask: You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive, depending on the content of the review.",
+            "Negative"
+        ]
+    ],
+    "neg": [
+        [
+            "For the following task, we need to match inputs with outputs via retrieval. After the task description, you will be given an example output for represenation.\n\nTask: You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive, depending on the content of the review.",
+            "Positive"
+        ]
+    ]
+}

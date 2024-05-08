@@ -1,0 +1,18 @@
+{
+    "query": [
+        "The task is: In this task you are given a question. You need to generate an answer to the question.\n\nRepresent the following input to retrieve a fitting output",
+        "Question:Who was married to Whitney Houston from 1992 to 2007?"
+    ],
+    "pos": [
+        [
+            "Information: In this task you are given a question. You need to generate an answer to the question.\nRepresent the text to be matched with a fitting input for it given the information",
+            "bobby brown"
+        ]
+    ],
+    "neg": [
+        [
+            "In this task you are given a question. You need to generate an answer to the question.\n\nGiven the above task description, represent the following answer that will be used to retrieve a fitting input!",
+            "2011"
+        ]
+    ]
+}

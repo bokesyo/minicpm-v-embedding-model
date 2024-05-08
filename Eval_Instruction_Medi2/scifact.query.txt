@@ -1,0 +1,1 @@
+Given a scientific claim, retrieve documents that support or refute the claim <text>
